@@ -1,15 +1,18 @@
-import React, { useState } from "react";
-import { Helmet } from "react-helmet-async";
-import { Container, Row, Col, Form, Button, Table } from "react-bootstrap";
 import { useFormik } from "formik";
-import JsonVideos from './jsonListVideos.json'
+import React, { useState } from "react";
+import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
+import { Helmet } from "react-helmet-async";
 import * as Yup from "yup";
+
+import waitingIcon from './../../assets/img/waiting.gif';
 import { VideosData } from "./interfaces";
+import JsonVideos from './jsonListVideos.json'
 import { findVideos } from "./services/servicesListVideos";
 
 const Default = () => {
   const [videos, setVideos] = useState<VideosData>();
   const [error, setError] = useState<null | string>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const validationSchema = Yup.object().shape({
     search: Yup.string(),
@@ -36,8 +39,11 @@ const Default = () => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-
-        const data = await findVideos(values)
+        setLoading(true)
+        const data = await findVideos(values).then((data) => {
+          setLoading(false);
+          return data
+        })
 
         if (data) {
           setVideos(data)
@@ -49,12 +55,6 @@ const Default = () => {
       }
     }
   });
-
-  // Função para calcular a soma dos limites diários
-  const totalMinutes = formik.values.dailyLimits.reduce(
-    (acc, curr) => acc + curr,
-    0
-  );
 
   return (
     <React.Fragment>
@@ -145,8 +145,8 @@ const Default = () => {
                 </Col>
                 <Col md={6} className="btn-videos">
 
-                  <Button variant="primary" type="submit" className="mt-3">
-                    Pesquisar
+                  <Button variant="primary" type="submit" className="mt-3" disabled={loading}>
+                    {loading ? <><img className="findingIcon" src={waitingIcon} /> Pesquisando...</> : "Pesquisar"}
                   </Button>
 
                   <p className="text-danger">{error && error}</p>
@@ -204,13 +204,8 @@ const Default = () => {
                   ))}
 
                 </tbody>
-
               </Table>
             </div>
-
-
-
-
 
           </Col>
         </Row>

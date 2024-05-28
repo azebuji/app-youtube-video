@@ -16,20 +16,7 @@ const Footer = () => (
                 rel="noreferrer"
                 className="text-muted"
               >
-                Sobre nós
-              </a>
-            </li>
-            <li className="list-inline-item">
-              <a
-                href={
-                  process.env.REACT_APP_WEBSITE_EXTERNAL +
-                  "politica-de-privacidade"
-                }
-                target="_blank"
-                rel="noreferrer"
-                className="text-muted"
-              >
-                Política de Privacidade
+                Sobre mim
               </a>
             </li>
           </ul>
