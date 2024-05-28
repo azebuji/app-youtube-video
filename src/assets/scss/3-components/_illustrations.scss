@@ -1,0 +1,29 @@
+.illustration {
+  background: $illustration-bg;
+  color: $illustration-color;
+}
+.illustration-app {
+  background: $primary;
+
+  .illustration-bg {
+    object-fit: cover;
+  }
+}
+
+.illustration-text {
+  color: $illustration-color;
+}
+
+.illustration-img {
+  max-width: 150px;
+  width: 100%;
+
+  @include media-breakpoint-up(xxl) {
+    max-width: 175px;
+  }
+}
+
+.btn-yellow {
+  background: $yellow;
+  color: #0b1538!important;
+}

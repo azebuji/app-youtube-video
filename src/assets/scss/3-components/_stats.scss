@@ -1,0 +1,38 @@
+.stat {
+  background: $stat-bg;
+  border-radius: 50%;
+  padding: 0.75rem;
+  width: 48px;
+  height: 48px;
+
+  svg {
+    width: 24px !important;
+    height: 24px;
+    color: $stat-icon-color !important;
+  }
+}
+
+.stat-sm {
+  width: 40px;
+  height: 40px;
+  padding: 0.625rem;
+
+  svg {
+    width: 20px !important;
+    height: 20px;
+  }
+}
+
+
+
+/* Estilo para a bolinha de status quando o usuário estiver online */
+.status-dot.online {
+  border: 4px solid #4CAF50;
+  /* Verde */
+}
+
+/* Estilo para a bolinha de status quando o usuário estiver offline */
+.status-dot.offline {
+  border: 4px solid #F44336;
+  /* Vermelho */
+}

@@ -1,0 +1,22 @@
+.noAttendantVideo {
+    iframe { 
+        padding: 5%;
+        height: 500px;
+        width: 800px;
+    }
+
+    @media screen and (max-width: 800px) {
+        iframe {
+            height: 400px;
+            width: 100%;
+        }
+    }
+
+
+    @media screen and (min-width: 801px) and (max-width: 1500px) {
+        iframe {
+            height: 500px;
+            width: 100%;
+        }
+    } 
+}

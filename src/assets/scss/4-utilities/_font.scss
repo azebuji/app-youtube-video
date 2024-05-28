@@ -1,0 +1,35 @@
+.fs-lg {
+  font-size: $font-size-lg;
+}
+
+.fs-sm {
+  font-size: $font-size-lg;
+}
+
+
+@font-face {
+  font-family: 'NewKansasLight'; // Dê um nome à sua fonte
+  src: url('./../../fonts/New-Kansas-Light.otf') format('truetype'); // Defina o caminho para o arquivo de fonte
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NewKansasBoldItalic'; // Dê um nome à sua fonte
+  src: url('./../../fonts/New-Kansas-Bold-Italic.otf') format('truetype'); // Defina o caminho para o arquivo de fonte
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NewKansasItalic'; // Dê um nome à sua fonte
+  src: url('./../../fonts/New-Kansas-Bold-Italic.otf') format('truetype'); // Defina o caminho para o arquivo de fonte
+  font-weight: normal;
+  font-style: normal;
+}
+
+.Kansas {
+  font-family: 'NewKansasBoldItalic';
+  font-size: 2rem;
+font-style: normal;
+font-weight: 600;
+line-height: 120%;
+}

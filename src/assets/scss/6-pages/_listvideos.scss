@@ -1,0 +1,13 @@
+.btn-videos {
+    display: grid;
+    justify-items: center;
+
+    button {
+        width: 50%
+    }
+
+    p {
+        max-width: 100%;
+        max-height: 50px;
+    }
+}

@@ -1,0 +1,35 @@
+.findingIcon {
+    width: 2em;
+}
+
+.loadingIconStream {
+    position: relative;
+    flex: 1;
+    display: flex;
+    width: 100%;
+
+    p {
+        position: relative;
+        top: -50px;
+    }
+}
+
+.loadingIcon {
+
+    &.absolute {
+        position: absolute;
+        top: 40%;
+        left: 50%
+    }
+
+    &.relative {
+        position: absolute;
+        flex: 1;
+        display: flex;
+        width: 20%;
+        align-self: center;
+    }
+
+
+
+}
