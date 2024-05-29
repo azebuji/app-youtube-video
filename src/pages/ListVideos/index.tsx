@@ -166,13 +166,6 @@ const Default = () => {
                   Dias Necessários:{" "}
                   {videos.daysNeeded}
                 </h3>
-                <h3 className="mb-3">Palavras Mais Usadas:</h3>
-                <ul>
-                  {videos &&
-                    videos.mostUsedWords.map((word, index) => (
-                      <li key={index}>{word}</li>
-                    ))}
-                </ul>
               </>
             )}
           </Col>
@@ -190,6 +183,7 @@ const Default = () => {
                     <th>Título</th>
                     <th>Descrição</th>
                     <th>Duração</th>
+                    <th>Palavras mais usadas</th>
                   </tr>
                 </thead>
 
@@ -200,6 +194,7 @@ const Default = () => {
                       <td>{video.title}</td>
                       <td>{video.description}</td>
                       <td>{video.duration}</td>
+                      <td>{video.mostUsedWords.join(', ')}</td>
                     </tr>
                   ))}
 
