@@ -175,13 +175,14 @@ const Default = () => {
           <Col md={12}>
             <h3 className="mb-3">Lista de Vídeos:</h3>
 
-            <div className={videos && videos?.videosFormated.length > 14 ? "table-scrolling" : ""}>
+            <div className={videos && videos?.videosFormated.length > 0 ? "table-scrolling" : ""}>
               <Table striped bordered hover responsive>
                 <thead>
                   <tr>
                     <th></th>
                     <th>Título</th>
                     <th>Descrição</th>
+                    <th>Video</th>
                     <th>Duração</th>
                     <th>Palavras mais usadas</th>
                   </tr>
@@ -193,6 +194,16 @@ const Default = () => {
                       <td>{index + 1}</td>
                       <td>{video.title}</td>
                       <td>{video.description}</td>
+                      <td>
+                        <div>
+                          <iframe typeof="text/html"
+                            width="320"
+                            height="280"
+                            src={`http://www.youtube.com/embed/${formik.values.type == "pattern" ? "Ri76yOpLrNg" : video.videoId}`}
+                          >
+                          </iframe>
+                        </div>
+                      </td>
                       <td>{video.duration}</td>
                       <td>{video.mostUsedWords.join(', ')}</td>
                     </tr>

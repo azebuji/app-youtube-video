@@ -3,6 +3,7 @@ export interface Video {
     description: string;
     duration: string;
     mostUsedWords: string[];
+    videoId: string
 }
 
 export interface VideosData {
